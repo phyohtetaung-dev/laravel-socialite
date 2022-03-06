@@ -30,3 +30,8 @@ GOOGLE_CLIENT_ID=${YOUR_GOOGLE_CLIENT_ID}
 GOOGLE_CLIENT_SECRET=${YOUR_GOOGLE_CLIENT_SECRET}
 ```
 **If app is not running on port 8000, modified "redirect" value in config/services.php for each provider.**
+
+## Migrate DB
+```
+php artisan migrate
+```

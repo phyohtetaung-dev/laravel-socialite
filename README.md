@@ -1,4 +1,5 @@
 # Social Authentication with Laravel Socialite
+![image](https://user-images.githubusercontent.com/42564050/156916322-1eb779cd-9d54-4336-9e0b-3e6f8d34040f.png)
 
 ## Requirements
 **php >= 8.1**

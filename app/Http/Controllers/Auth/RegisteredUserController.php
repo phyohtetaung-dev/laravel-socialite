@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Enum\OAuthProvider;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -45,7 +44,7 @@ class RegisteredUserController extends Controller
                 'max:255',
                 Rule::unique('users')->where(function ($query) {
                     return $query->where('email', request('email'))
-                        ->where('provider', OAuthProvider::Manual);
+                        ->whereNull('provider');
                 }),
             ],
             'password' => ['required', 'confirmed', Password::defaults()],
@@ -55,7 +54,6 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'provider' => OAuthProvider::Manual,
         ]);
 
         event(new Registered($user));
